@@ -40,7 +40,6 @@ import EditUser from './components/EditUser'
 
 
 class App extends Component {
-  units = []
 
   componentDidMount() {
     // fetchBookmarks()
@@ -91,40 +90,34 @@ class App extends Component {
   }
 
   handleSignUp = async (event) => {
-
-
     try {
       event.preventDefault()
       const form = event.target
-      let unitIndex = this.units[form.elements.unit.value]
-      console.log(unitIndex)
-
       const response = await api.post('/auth/register', {
         email: form.elements.email.value,
         password: form.elements.password.value,
         name: {
-          firstname: form.elements.firstname.value,
+          fristname: form.elements.firstname.value,
           lastname: form.elements.lastname.value,
-          guidename: form.elements.guidename.value
         },
-        membershipNo: form.elements.membershipNo.value,
-        phone: form.elements.phone.value,
+        membershipNo: form.elements.membershipNo,
+        phone: form.elements.phonenumber,
         unit: {
-          ...unitIndex
+          name: ''
         }
       })
+
       let token = response.data.token
-      localStorage.setItem('token', token)
       setJwt(response.data.token)
       store.dispatch(setTokenAction(token))
-
+      // fetchBookmarks()
     } catch (error) {
       store.dispatch(setSignupErrorAction(error.message))
     }
 
   }
 
-
+  
 
   render() {
     // const bookmarks = store.getState().bookmarks
@@ -133,13 +126,13 @@ class App extends Component {
     const token = store.getState().token
     const tokenDetails = token && decodeJWT(token)
     // const activity = store.getState().activity
-    console.log('activities array', activities)
+    console.log('activities array',activities)
     return (
       <div className="App">
         {
-
+          
           <Router>
-
+            
             <Fragment>
               {/* <TabBar tokenDetails={tokenDetails} /> */}
               {/* {!tokenDetails ? <Redirect from="*" to="/login" />:null} */}
@@ -158,20 +151,20 @@ class App extends Component {
                   if (tokenDetails) {
                     return (<Redirect to="/" />)
                   } else {
-                    return (<Signup signupError={store.getState().signupError} handleSignUp={this.handleSignUp} units={this.units && this.units} />)
+                    return (<Signup signupError={store.getState().signupError} handleSignUp={this.handleSignUp} />)
                   }
                 }} />
-
+               
                 <Route exact path="/" render={() => {
                   if (tokenDetails) {
-                    return <Redirect to="/user" />
+                    return <Redirect to="/user" /> 
                   } else {
                     return <Redirect to="/login" />
                   }
                 }} />
 
                 <Route exact path="/activities" render={() => {
-                  return <Activities activities={activities} />
+                    return <Activities activities={activities} />
                 }} />
 
                 <Route exact path="/user" render={() => {
@@ -190,7 +183,7 @@ class App extends Component {
                 <Route exact path="/programs" render={() => (
                   <Programs programs={programs} />
                 )} />
-
+                
                 <Route path="/unit" exact component={Unit} />
                 <Route path="/create-program" exact component={CreateProgram} />
                 <Route path="/create-program" exact component={CreateProgram} />

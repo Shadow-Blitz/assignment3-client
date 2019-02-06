@@ -11,11 +11,11 @@ const style = {
     }
 }
 
-export default ({ handleSignUp, signupError, units }) => (
+export default ({ handleSignup, signupError }) => (
     <Paper style={style.Paper}>
         <h2>Register as a New Leader</h2>
 
-        <form onSubmit={handleSignUp}>
+        <form onSubmit={handleSignup}>
             {signupError && <p>{signupError}</p>}
             <TextField
                 required
@@ -36,10 +36,10 @@ export default ({ handleSignUp, signupError, units }) => (
 
             <TextField
                 required
-                id="firstname"
+                id="fristname"
                 label="First Name"
                 margin="normal"
-                type="firstname"
+                type="fristname"
             />
             <br />
             <TextField
@@ -48,15 +48,6 @@ export default ({ handleSignUp, signupError, units }) => (
                 label="Last Name"
                 margin="normal"
                 type="lastname"
-            />
-            <br />
-
-            <TextField
-                required
-                id="guidename"
-                label="Guide Name"
-                margin="normal"
-                type="guidename"
             />
             <br />
 
@@ -71,10 +62,10 @@ export default ({ handleSignUp, signupError, units }) => (
 
             <TextField
                 required
-                id="phone"
+                id="phonenumber"
                 label="Phone Number"
                 margin="normal"
-                type="phone"
+                type="phonenumber"
             />
             <br />
 
