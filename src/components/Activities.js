@@ -5,25 +5,33 @@
 import React from 'react'
 import Activity from './Activity.js'
 import PropTypes from 'prop-types'
+import { Grid } from '@material-ui/core/';
 
 // Should be renamed to ActivityList for clarity
 function Activities(props) {
     const activities = props.activities
+
     return (
-        <div>
+        <React.Fragment>
             <h1>Activities List</h1>
-            <ul>
             {/* For each activity in the activities array, pass key info to the ActivityCard and display all cards as list items */}
+            <Grid 
+            container 
+            spacing={16}
+            direction="row"
+            justify="center"
+            alignItems="center">
+            {/* Display an activity item as an ActivityCard instance */}
                 {activities.map(activity => (
-                    <li key={activity._id} >
-                        {/* Display an activity item as an ActivityCard instance */}
-                        <Activity activity={activity}></Activity>
-                    </li>
-                ))}
-            </ul>
-        </div>
+                        <Activity key={activity._id} activity={activity}></Activity>
+                )
+            )}
+            </Grid>
+
+        </React.Fragment>
     )
 }
+
 Activities.propTypes = {
     activities: PropTypes.array
 }

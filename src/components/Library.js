@@ -4,7 +4,8 @@ class Library extends Component {
   render() {
     return (
       <div>
-        <h1>Search our library of guiding activities...</h1>
+        <h1>Search our library of guiding resources...</h1>
+        {/* Render a list of all activities and programs here with search, filter and sort functionality */}
       </div>
     )
   }

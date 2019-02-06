@@ -28,7 +28,10 @@ import Activity from './Activity'
 
 const styles = theme => ({
   card: {
-    maxWidth: 400,
+    width: 400,
+    margin: 15,
+    // marginBottom: 20,
+
   },
   media: {
     height: 0,
@@ -79,10 +82,12 @@ class Program extends React.Component {
           }
           action={
             // Fix this button to allow users to option to edit and delete etc.
-            <IconButton>
-              {/* Need to make the edit icon orange */}
-              <Link to={`/programs/${program._id}/edit`}><i className="material-icons">edit</i></Link> 
-            </IconButton>
+            <Link to={`/programs/${program._id}/edit`}>
+              <IconButton>
+                {/* Need to make the edit icon orange */}
+                <i className="material-icons">edit</i>
+              </IconButton>
+            </Link>
             // Make another option "delete":
             // <button onClick={() => removeProgram(program._id)}>Delete</button>
             // Make another option "view":
@@ -143,7 +148,7 @@ class Program extends React.Component {
           </CardContent>
         </Collapse> */}
 
-    </Card>
+      </Card>
 
     );
   }

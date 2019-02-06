@@ -11,13 +11,13 @@ class CreateProgram extends Component {
         e.preventDefault()
 
         try {
-            const { name, description, length, date } = e.target.elements
-            console.log(date.value)
+            const { name, description, len, date } = e.target.elements
+            console.log(len.value)
             api.post('/programs', {
                 name: name.value,
                 description: description.value,
                 date: date.value,
-                length: length.value
+                length: len.value
             })
                 .then((response) => {
                     this.props.history.push(`/programs/${response.data._id}/updateactivities`)
@@ -61,7 +61,7 @@ class CreateProgram extends Component {
                     <br />
                     <TextField
                         required
-                        id="length"
+                        id="len"
                         label="Length"
                         margin="normal"
                         type="length"

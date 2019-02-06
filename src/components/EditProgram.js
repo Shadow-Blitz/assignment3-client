@@ -6,19 +6,19 @@ import { Paper, Button, TextField } from '@material-ui/core'
 
 class EditProgram extends Component {
     state = {
-        program:{
+        program: {
             name: '',
             description: '',
             length: '',
             date: ''
         },
-        activities:[]
+        activities: []
     }
 
     componentDidMount() {
-        api.get(`programs/${this.props.match.params.id}`).then((res)=> {
+        api.get(`programs/${this.props.match.params.id}`).then((res) => {
             this.setState(res.data)
-        })  
+        })
     }
 
 
@@ -29,11 +29,11 @@ class EditProgram extends Component {
         e.preventDefault()
         try {
             const { id } = this.props.match.params
-            const { name, description, length, date } = e.target.elements
+            const { name, description, len, date } = e.target.elements
             api.put(`/programs/${id}`, {
                 name: name.value,
                 description: description.value,
-                length: this.state.program.length,
+                length: len.value,
                 date: date.value
 
             })
@@ -45,14 +45,16 @@ class EditProgram extends Component {
     }
 
 
-    _change = (name, description, length, date) => event => {
-        this.setState({program: {
-            [name]: event.target.value,
-            [description]: event.target.value,
-            [length]: event.target.value,
-            [date]: event.target.value
+    _change = (name, description, len, date) => event => {
+        this.setState({
+            program: {
+                [name]: event.target.value,
+                [description]: event.target.value,
+                [len]: event.target.value,
+                [date]: event.target.value
 
-        }});
+            }
+        });
     };
 
     render() {
@@ -66,7 +68,7 @@ class EditProgram extends Component {
                         label="Name"
                         margin="normal"
                         type="name"
-                        value={ this.state.program.name}
+                        value={this.state.program.name}
                         onChange={this._change('name')}
                     />
                     <br />
@@ -84,12 +86,12 @@ class EditProgram extends Component {
                     <p>Category</p>
                     <TextField
                         required
-                        id="length"
+                        id="len"
                         label="Length"
                         margin="normal"
                         type="length"
                         value={this.state.program.length}
-                        onChange={this._change('length')}
+                        onChange={this._change('len')}
                     />
                     <br />
                     <p>Category</p>

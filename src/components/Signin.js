@@ -35,8 +35,8 @@ export default ({ handleSignIn, loginError }) => (
                 type="password"
             />
             <br />
-            <Button type="submit" variant="contained" color="primary">Sign In</Button>
-            <Link to='/signup'><Button type="button" variant='contained' color="primary" style={{ 'backgroundColor': 'orange' }}>Register</Button></Link>
+            <Button type="submit" variant="contained" color="primary" style={{'margin': 15}}>Sign In</Button>
+            <Link to='/signup'><Button type="button" variant='contained' color="primary" style={{ 'backgroundColor': 'orange', margin: 15 }}>Sign Up</Button></Link>
         </form>
 
     </Paper >

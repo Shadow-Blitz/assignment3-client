@@ -66,7 +66,7 @@ class UpdateActivitytoProgram extends Component {
                         Add Activities
                     </Button>
                     {this.state.activities.map((activity, index) => (
-                        <div className="input-group">
+                        <div key={index} className="input-group">
                             <label>
                                 <p> Activity Title: {activity.title}</p>
                                 <p>Description: {activity.description}</p>
