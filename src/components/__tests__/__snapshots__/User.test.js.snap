@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User should render initial layout 1`] = `
+Array [
+  <User
+    classes={
+      Object {
+        "container": "User-container-2",
+        "divider": "User-divider-4",
+        "paper": "User-paper-3",
+        "root": "User-root-1",
+      }
+    }
+  />,
+]
+`;

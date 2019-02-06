@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Program should render initial layout 1`] = `
+Array [
+  <Program
+    classes={
+      Object {
+        "actions": "Program-actions-3",
+        "avatar": "Program-avatar-6",
+        "card": "Program-card-1",
+        "expand": "Program-expand-4",
+        "expandOpen": "Program-expandOpen-5",
+        "media": "Program-media-2",
+      }
+    }
+  />,
+]
+`;

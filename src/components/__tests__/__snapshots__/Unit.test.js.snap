@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit should render initial layout 1`] = `
+Array [
+  <React.Fragment>
+    <h1 />
+    <h2>
+      Guide Hut
+    </h2>
+    <WithStyles(Divider) />
+    <h2>
+      Unit Leaders
+    </h2>
+    <WithStyles(Grid)
+      alignItems="center"
+      container={true}
+      direction="row"
+      justify="center"
+      spacing={16}
+    />
+    <WithStyles(Divider) />
+    <h2>
+      Unit Programs
+    </h2>
+    <WithStyles(Grid)
+      alignItems="center"
+      container={true}
+      direction="row"
+      justify="center"
+      spacing={16}
+    />
+    <Link
+      replace={false}
+      to="/create-program"
+    >
+      <WithStyles(Fab)
+        aria-label="Add"
+        color="secondary"
+        size="medium"
+        style={
+          Object {
+            "backgroundColor": "orange",
+            "margin": 15,
+          }
+        }
+      >
+        <pure(AddIcon) />
+      </WithStyles(Fab)>
+    </Link>
+    <WithStyles(Divider) />
+    <h2>
+      Unit Members
+    </h2>
+    <WithStyles(Fab)
+      aria-label="Add"
+      className="plusButton"
+      color="secondary"
+      size="medium"
+      style={
+        Object {
+          "backgroundColor": "orange",
+          "margin": 15,
+        }
+      }
+    >
+      <pure(AddIcon) />
+    </WithStyles(Fab)>
+  </React.Fragment>,
+]
+`;

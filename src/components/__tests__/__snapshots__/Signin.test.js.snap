@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin should render initial layout 1`] = `
+Array [
+  <WithStyles(Paper)
+    style={
+      Object {
+        "margin": "10% auto 0 auto",
+        "padding": "5%",
+        "textAlign": "center",
+        "width": "500px",
+      }
+    }
+  >
+    <img
+      alt="Girl Guides Australia Logo"
+      src="logo.svg"
+    />
+    <form>
+      <TextField
+        id="email"
+        label="Email"
+        margin="normal"
+        required={true}
+        select={false}
+        type="email"
+        variant="standard"
+      />
+      <br />
+      <TextField
+        id="password"
+        label="Password"
+        margin="normal"
+        required={true}
+        select={false}
+        type="password"
+        variant="standard"
+      />
+      <br />
+      <WithStyles(Button)
+        color="primary"
+        style={
+          Object {
+            "margin": 15,
+          }
+        }
+        type="submit"
+        variant="contained"
+      >
+        Sign In
+      </WithStyles(Button)>
+      <Link
+        replace={false}
+        to="/signup"
+      >
+        <WithStyles(Button)
+          color="primary"
+          style={
+            Object {
+              "backgroundColor": "orange",
+              "margin": 15,
+            }
+          }
+          type="button"
+          variant="contained"
+        >
+          Sign Up
+        </WithStyles(Button)>
+      </Link>
+    </form>
+  </WithStyles(Paper)>,
+]
+`;

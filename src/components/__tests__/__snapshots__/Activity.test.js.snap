@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Activity should render initial layout 1`] = `
+Array [
+  <Activity
+    classes={
+      Object {
+        "actions": "Activity-actions-3",
+        "avatar": "Activity-avatar-6",
+        "card": "Activity-card-1",
+        "expand": "Activity-expand-4",
+        "expandOpen": "Activity-expandOpen-5",
+        "media": "Activity-media-2",
+      }
+    }
+  />,
+]
+`;

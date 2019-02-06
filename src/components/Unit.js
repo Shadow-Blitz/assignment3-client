@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Fab, Paper, Grid, Divider, Typography } from '@material-ui/core/';
-import AddIcon from '@material-ui/icons/Add/';
+import AddIcon from '@material-ui/icons/Add';
 import { api, setJwt } from '../api/init'
 import { Link } from 'react-router-dom';
 import Program from './Program'
@@ -11,7 +11,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   container: {
-    display:'grid',
+    display: 'grid',
     gridTemplateColumns: 'repeat(12, 1fr)',
     gridGap: `${theme.spacing.unit * 3}px`,
   },
@@ -28,7 +28,7 @@ const styles = theme => ({
     // 'padding': '5%'
   },
   divider: {
-    margin: `${theme.spacing.unit *2}px 0`,
+    margin: `${theme.spacing.unit * 2}px 0`,
   },
 });
 
@@ -36,10 +36,10 @@ class Unit extends Component {
   state = {
     users: [],
     programs: [],
-    units: [], 
-    direction: 'row', 
-    justify: 'center', 
-    alignItems: 'center' 
+    units: [],
+    direction: 'row',
+    justify: 'center',
+    alignItems: 'center'
   }
 
   componentDidMount() {
@@ -53,7 +53,7 @@ class Unit extends Component {
       console.error('Could not fetch user', err)
     })
   }
-  
+
 
   render() {
     console.log(this.state.users[0])
@@ -65,7 +65,7 @@ class Unit extends Component {
 
         {/* Header with logo, unit name etc. */}
         <h1>{this.state.unit && this.state.unit.name}</h1>
-        
+
         {/* 'Guide Hut' Section */}
         <h2>Guide Hut</h2>
         {/* Render guide hut info here, e.g. a map showing where it is located. */}
@@ -74,47 +74,47 @@ class Unit extends Component {
 
         {/* Display a list of leaders associated with the unit */}
         <h2>Unit Leaders</h2>
-        <Grid 
-            container 
-            spacing={16}
-            direction={direction} 
-            justify={justify }
-            alignItems={alignItems} >
-            {/* <Paper style={styles.paper}> */}
-              {this.state.users.map((user) => <p key={user._id}>{user.name.firstname} {user.name.lastname}</p>)}
-            {/* </Paper> */}
-          </Grid>
+        <Grid
+          container
+          spacing={16}
+          direction={direction}
+          justify={justify}
+          alignItems={alignItems} >
+          {/* <Paper style={styles.paper}> */}
+          {this.state.users.map((user) => <p key={user._id}>{user.name.firstname} {user.name.lastname}</p>)}
+          {/* </Paper> */}
+        </Grid>
 
         <Divider style={styles.divider} />
 
         {/* Display a list of programs created by the unit leaders */}
         <h2>Unit Programs</h2>
-        <Grid 
-            container 
-            spacing={16}
-            direction={direction} 
-            justify={justify }
-            alignItems={alignItems} >
-            {this.state.programs.map((program) => (
-                  <Program key={program._id} program={program} />
-                )
-              )}
+        <Grid
+          container
+          spacing={16}
+          direction={direction}
+          justify={justify}
+          alignItems={alignItems} >
+          {this.state.programs.map((program) => (
+            <Program key={program._id} program={program} />
+          )
+          )}
         </Grid>
 
-          <Link to='/create-program'>
-            <Fab size="medium" color="secondary" aria-label="Add" style={{ 'backgroundColor': 'orange', margin: 15 }}>
-              <AddIcon />
-            </Fab>
-          </Link>
-        
+        <Link to='/create-program'>
+          <Fab size="medium" color="secondary" aria-label="Add" style={{ 'backgroundColor': 'orange', margin: 15 }}>
+            <AddIcon />
+          </Fab>
+        </Link>
+
         <Divider style={styles.divider} />
 
         {/* Display a list of members belonging to the unit */}
-          <h2>Unit Members</h2>
-          <Fab className="plusButton" size="medium" color="secondary" aria-label="Add" style={{ 'backgroundColor': 'orange', margin: 15 }}>
-            <AddIcon />
-          </Fab>
-          
+        <h2>Unit Members</h2>
+        <Fab className="plusButton" size="medium" color="secondary" aria-label="Add" style={{ 'backgroundColor': 'orange', margin: 15 }}>
+          <AddIcon />
+        </Fab>
+
       </React.Fragment>
     )
   }

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateProgram should render initial layout 1`] = `
+Array [
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <h1>
+        Create a new program for your unit
+      </h1>
+      <TextField
+        id="name"
+        label="Name"
+        margin="normal"
+        required={true}
+        select={false}
+        type="name"
+        variant="standard"
+      />
+      <br />
+      <TextField
+        id="description"
+        label="Description"
+        margin="normal"
+        required={true}
+        select={false}
+        type="description"
+        variant="standard"
+      />
+      <br />
+      <p>
+        Date
+      </p>
+      <TextField
+        id="date"
+        margin="normal"
+        required={true}
+        select={false}
+        type="date"
+        variant="standard"
+      />
+      <br />
+      <TextField
+        id="len"
+        label="Length"
+        margin="normal"
+        required={true}
+        select={false}
+        type="length"
+        variant="standard"
+      />
+      <p>
+        Attachments
+      </p>
+      <WithStyles(Button)
+        color="primary"
+        style={
+          Object {
+            "backgroundColor": "orange",
+          }
+        }
+        type="submit"
+        variant="contained"
+      >
+        Create
+      </WithStyles(Button)>
+    </form>
+  </div>,
+]
+`;

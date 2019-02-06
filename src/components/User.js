@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Fab, Paper, Grid, Divider, Typography } from '@material-ui/core/';
-import AddIcon from '@material-ui/icons/Add/';
+import AddIcon from '@material-ui/icons/Add';
 import { api, setJwt } from '../api/init'
 import { Link } from 'react-router-dom';
 // import store from '../config/store'
@@ -151,7 +151,7 @@ class User extends Component {
           )}
         </Grid>
 
-      </React.Fragment>
+      </React.Fragment >
     )
   }
 }

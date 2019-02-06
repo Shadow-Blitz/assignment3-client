@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateActivity should render initial layout 1`] = `
+Array [
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <h1>
+        Create a new activity to add to our share library
+      </h1>
+      <p>
+        Age Level
+      </p>
+      <select
+        onChange={[Function]}
+      />
+      <br />
+      <TextField
+        id="title"
+        label="Title"
+        margin="normal"
+        required={true}
+        select={false}
+        style={
+          Object {
+            "width": "20rem",
+          }
+        }
+        type="title"
+        variant="standard"
+      />
+      <br />
+      <TextField
+        id="description"
+        label="Description"
+        margin="normal"
+        multiline={true}
+        required={true}
+        rowsMax="10"
+        select={false}
+        style={
+          Object {
+            "width": "25rem",
+          }
+        }
+        type="description"
+        variant="standard"
+      />
+      <br />
+      <p>
+        Category
+      </p>
+      <TextField
+        id="len"
+        label="Length"
+        margin="normal"
+        required={true}
+        select={false}
+        style={
+          Object {
+            "width": "20rem",
+          }
+        }
+        type="len"
+        variant="standard"
+      />
+      <p>
+        Attachments
+      </p>
+      <WithStyles(Button)
+        color="primary"
+        style={
+          Object {
+            "backgroundColor": "orange",
+          }
+        }
+        type="submit"
+        variant="contained"
+      >
+        Create
+      </WithStyles(Button)>
+    </form>
+  </div>,
+]
+`;

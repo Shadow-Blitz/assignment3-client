@@ -45,10 +45,10 @@ class App extends Component {
     // fetchBookmarks()
     fetchActivities()
     fetchPrograms()
-     const token = localStorage.getItem('token')
-     if (token) {
-       store.dispatch(setTokenAction(token))
-       setJwt(token)
+    const token = localStorage.getItem('token')
+    if (token) {
+      store.dispatch(setTokenAction(token))
+      setJwt(token)
     }
 
     api.get('/units').then((res) => {
