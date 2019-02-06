@@ -13,6 +13,11 @@ class CreateProgram extends Component {
         try {
             const { name, description, len, date } = e.target.elements
             console.log(len.value)
+            const length = parseInt(len.value)
+      if (isNaN(length) || length < 1 || length > 120) {
+        alert('Length must be between 1 and 120 minutes and digits only')
+        return
+      }
             api.post('/programs', {
                 name: name.value,
                 description: description.value,

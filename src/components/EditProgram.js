@@ -30,6 +30,11 @@ class EditProgram extends Component {
         try {
             const { id } = this.props.match.params
             const { name, description, len, date } = e.target.elements
+            const length = parseInt(len.value)
+      if (isNaN(length) || length < 1 || length > 120) {
+        alert('Length must be between 1 and 120 minutes and digits only')
+        return
+      }
             api.put(`/programs/${id}`, {
                 name: name.value,
                 description: description.value,
